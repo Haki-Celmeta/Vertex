@@ -1,0 +1,57 @@
+@import '../../assets/styles/mixin';
+@import '../../assets/styles/variables';
+
+.partnership-container {
+  padding: 4rem 2rem;
+
+  h2 {
+    width: fit-content;
+    font-size: 4rem;
+    color: $dark-orange-color;
+    margin-bottom: 3rem;
+    transition: 0.4s;
+  }
+
+  h2:hover {
+    color: black;
+  }
+
+  .partnerships {
+    @include displayFlex(row);
+    justify-content: space-between;
+  }
+
+  .partnership {
+    @include displayFlex(column);
+    align-items: center;
+    border-right: 1px solid black;
+    padding: 1rem;
+    padding-right: 3rem;
+
+    img {
+      width: 70px;
+    }
+
+    h3 {
+      font-size: 2rem;
+      text-align: center;
+      margin-top: auto;
+    }
+  }
+
+  .partnership:nth-child(2) {
+    img {
+      margin-top: 2rem;
+    }
+  }
+  .partnership:nth-child(4) {
+    img {
+      margin-top: 1.5rem;
+    }
+  }
+  .partnership:nth-child(5) {
+    img {
+      margin-top: 1rem;
+    }
+  }
+}

@@ -5,6 +5,7 @@
   width: 100vw;
   height: 80vh;
   @include displayFlexCenter(column);
+  margin-bottom: 4rem;
 
   h1 {
     font-size: 5rem;
@@ -12,6 +13,7 @@
     transition: 0.4s;
     color: $dark-orange-color;
     letter-spacing: 3px;
+    margin-bottom: 2rem;
   }
 
   h1:hover {

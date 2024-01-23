@@ -1,0 +1,48 @@
+@import '../../assets/styles/mixin';
+@import '../../assets/styles/variables';
+
+.clients-container {
+  @include displayFlex(column);
+  gap: 2rem;
+  padding: 4rem 2rem;
+
+  h2 {
+    width: fit-content;
+    font-size: 4rem;
+    color: $dark-orange-color;
+    transition: 0.4s;
+  }
+
+  h2:hover {
+    color: black;
+  }
+
+  .clients-testimonals {
+    @include displayFlex(row);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    blockquote {
+      @include displayFlex(column);
+      border: 1px solid black;
+      border-radius: 16px;
+      padding: 1rem;
+      width: 600px;
+      height: 210px;
+      overflow: auto;
+
+      p {
+        color: $charcoal-color;
+        line-height: 1.75rem;
+        margin-bottom: 0.5rem;
+      }
+
+      footer {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: auto;
+      }
+    }
+  }
+}

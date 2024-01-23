@@ -1,10 +1,15 @@
 @import '../../assets/styles/mixin';
 @import '../../assets/styles/variables';
 
+.all-work-container {
+  background-color: rgb(241, 241, 241);
+  padding-top: 2rem;
+}
+
 .work-display-container {
   @include displayFlex(row);
-  padding: 2rem 0rem 2rem 4rem;
-  gap: 2rem;
+  padding: 0rem 0rem 2rem 4rem;
+  gap: 4rem;
 
   .work-information-container {
     @include displayFlex(column);
@@ -13,10 +18,11 @@
 
     h2 {
       width: fit-content;
-      font-size: 4.5rem;
+      font-size: 3rem;
       font-weight: 400;
-      color: $orange-red-color;
+      color: $dark-orange-color;
       transition: 0.4s;
+      margin-bottom: 1rem;
     }
 
     h2:hover {
@@ -24,8 +30,21 @@
     }
 
     p {
-      font-size: 1.1rem;
-      line-height: 1.3rem;
+      font-size: 1.2rem;
+      line-height: 2rem;
     }
+  }
+
+  img {
+    width: 800px;
+    border-radius: 16px;
+  }
+}
+
+.work-display-container.concrete {
+  padding: 0rem 4rem 2rem 0rem;
+
+  img {
+    height: 500px;
   }
 }
