@@ -1,0 +1,31 @@
+@import '../../assets/styles/mixin';
+@import '../../assets/styles/variables';
+
+.work-display-container {
+  @include displayFlex(row);
+  padding: 2rem 0rem 2rem 4rem;
+  gap: 2rem;
+
+  .work-information-container {
+    @include displayFlex(column);
+    justify-content: center;
+    color: $charcoal-color;
+
+    h2 {
+      width: fit-content;
+      font-size: 4.5rem;
+      font-weight: 400;
+      color: $orange-red-color;
+      transition: 0.4s;
+    }
+
+    h2:hover {
+      color: black;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.3rem;
+    }
+  }
+}
