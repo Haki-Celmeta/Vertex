@@ -10,6 +10,7 @@ const Work = ({ title, children, image }) => {
         <p>
           {children}
         </p>
+        <a href="/">READ MORE</a>
       </div>
       <img src={image} alt={title} />
     </div>

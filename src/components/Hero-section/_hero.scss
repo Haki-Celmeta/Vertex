@@ -3,7 +3,7 @@
 
 .hero-section {
   width: 100vw;
-  height: 80vh;
+  height: 90vh;
   @include displayFlexCenter(column);
   margin-bottom: 4rem;
 
@@ -11,7 +11,7 @@
     font-size: 5rem;
     font-weight: 400;
     transition: 0.4s;
-    color: $dark-orange-color;
+    color: $orange-red-color;
     letter-spacing: 3px;
     margin-bottom: 2rem;
   }

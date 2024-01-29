@@ -1,13 +1,23 @@
 import './assets/styles/main.scss';
 import Home from './pages/Home';
-import './App.scss'
+import AboutUs from './pages/About';
+import NotFound from './pages/NotFound';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-function App() {
-  return (
-    <>
-      <Home />
-    </>
-  );
+const Router = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+      errorElement: <NotFound />
+    },
+    {
+      path: "about",
+      element: <AboutUs />
+    }
+  ])
+
+  return <RouterProvider router={router} />
 }
 
-export default App;
+export { Router };

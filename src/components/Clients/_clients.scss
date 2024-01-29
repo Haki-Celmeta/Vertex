@@ -8,8 +8,8 @@
 
   h2 {
     width: fit-content;
-    font-size: 4rem;
-    color: $dark-orange-color;
+    font-size: 3rem;
+    color: $orange-red-color;
     transition: 0.4s;
   }
 
@@ -27,21 +27,35 @@
       @include displayFlex(column);
       border: 1px solid black;
       border-radius: 16px;
-      padding: 1rem;
+      padding: 2rem;
       width: 600px;
-      height: 210px;
+      height: 250px;
+      transition: 0.4s;
+      cursor: pointer;
       overflow: auto;
 
       p {
         color: $charcoal-color;
         line-height: 1.75rem;
         margin-bottom: 0.5rem;
+        transition: 0.4s;
       }
 
       footer {
         font-size: 1.2rem;
         font-weight: 700;
         margin-top: auto;
+        transition: 0.4s;
+      }
+    }
+
+    blockquote:hover {
+      background-color: $orange-red-color;
+      transform: translateY(-10px);
+      border: 1px solid $orange-red-color;
+
+      p, footer {
+        color: #fff;
       }
     }
   }

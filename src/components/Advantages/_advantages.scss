@@ -1,0 +1,62 @@
+@import '../../assets/styles/mixin';
+@import '../../assets/styles/variables';
+
+.advantages-container {
+  @include displayFlexCenter(column);
+  padding: 4rem 2rem;
+  gap: 4rem;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 3rem;
+    color: $orange-red-color;
+    transition: 0.4s;
+  }
+
+  h2:hover {
+    color: black
+  }
+}
+
+.advantage-cards {
+  @include displayFlex(row);
+  width: 100%;
+  justify-content: space-evenly;
+
+  .advantage {
+    @include displayFlexCenter(column);
+    border: 1px solid black;
+    padding: 3rem 1.5rem;
+    width: 300px;
+    gap: 1rem;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.5s;
+
+    img {
+      width: 100px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: $orange-red-color;
+      transition: 0.4s;
+    }
+
+    p {
+      color: $charcoal-color;
+      transition: 0.5s;
+    }
+  }
+
+  .advantage:hover {
+    background-color: $orange-red-color;
+    transform: translateY(10px);
+    border: 1px solid $orange-red-color;
+
+    h3, p {
+      color: #fff;
+    }
+  }
+}

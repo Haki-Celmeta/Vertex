@@ -9,3 +9,14 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin button($font-size) {
+  width: fit-content;
+  border: 1px solid $orange-red-color;
+  padding: 1rem 3rem;
+  text-decoration: none;
+  font-size: $font-size;
+  color: $orange-red-color;
+  border-radius: 8px;
+  transition: 0.2s;
+}

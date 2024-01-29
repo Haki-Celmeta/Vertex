@@ -2,8 +2,20 @@
 @import '../../assets/styles/variables';
 
 .all-work-container {
-  background-color: rgb(241, 241, 241);
-  padding-top: 2rem;
+  @include displayFlex(column);
+  align-items: center;
+  padding-top: 4rem;
+
+  > h2 {
+    font-size: 3rem;
+    color: $orange-red-color;
+    transition: 0.4s;
+    margin-bottom: 4rem;
+  }
+
+  > h2:hover {
+    color: black
+  }
 }
 
 .work-display-container {
@@ -20,7 +32,7 @@
       width: fit-content;
       font-size: 3rem;
       font-weight: 400;
-      color: $dark-orange-color;
+      color: $orange-red-color;
       transition: 0.4s;
       margin-bottom: 1rem;
     }
@@ -32,6 +44,16 @@
     p {
       font-size: 1.2rem;
       line-height: 2rem;
+    }
+
+    a {
+      @include button(1rem);
+      margin-top: 2rem;
+    }
+
+    a:hover {
+      background-color: $orange-red-color;
+      color: #fff;
     }
   }
 

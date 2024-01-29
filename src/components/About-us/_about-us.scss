@@ -1,0 +1,55 @@
+@import '../../assets/styles/mixin';
+@import '../../assets/styles/variables';
+
+.about-us-container {
+  @include displayFlex(column);
+  padding: 4rem 2rem;
+  gap: 2rem;
+
+  h2 {
+    width: fit-content;
+    font-size: 3rem;
+    color: $orange-red-color;
+    transition: 0.4s;
+  }
+
+  h2:hover {
+    color: black;
+  }
+}
+
+.info-img {
+  @include displayFlex(row);
+  gap: 5rem;
+
+  .about-us-information {
+    @include displayFlex(column);
+    gap: 4rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 6px 6px 15px -3px $orange-red-color;
+    align-items: center;
+
+    p {
+      font-size: 1.75rem;
+      color: $charcoal-color;
+      line-height: 2.5rem;
+    }
+
+    a {
+      @include button(1.5rem);
+    }
+
+    a:hover {
+      background-color: $orange-red-color;
+      color: #fff;
+    }
+  }
+
+  img {
+    width: 800px;
+    border-radius: 16px;
+    box-shadow: 6px 6px 15px -3px $orange-red-color;
+  }
+}
