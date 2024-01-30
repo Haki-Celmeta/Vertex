@@ -6,11 +6,34 @@ import instagram from "../../assets/images/social-media/instagram-svgrepo-com.sv
 import xMedia from "../../assets/images/social-media/x-social-media-black-icon.svg";
 import pinterest from "../../assets/images/social-media/pinterest-svgrepo-com.svg";
 import linkedin from "../../assets/images/social-media/linkedin-161-svgrepo-com.svg";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 import "./_footer.scss";
 
 const Footer = () => {
+  const footerVariant = {
+    visible: { opacity: 1, transition: { duration: 0.8, ease: "easeIn" }, y: 0 },
+    hidden: { opacity: 0, y: "20px" }
+  }
+
+  const control = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.3 });
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView])
+
   return (
-    <footer className="web-foot">
+    <motion.footer
+      ref={ref}
+      variants={footerVariant}
+      initial="hidden"
+      animate={control}
+      className="web-foot"
+    >
       <div className="first-part">
         <img src={logo} alt="logo" />
         <div>
@@ -44,7 +67,7 @@ const Footer = () => {
         </div>
         <h4>©Copyright. All rights reserved.</h4>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
 

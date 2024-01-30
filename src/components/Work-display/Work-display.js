@@ -3,12 +3,35 @@ import interior from "../../assets/images/interior-design-finishing.jpg";
 import concrete from "../../assets/images/concrete-work.jpg";
 import architecture from "../../assets/images/architecture-design.jpg";
 import Work from "./Work";
-import './_work-display.scss';
 import { Link } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import './_work-display.scss';
 
 const WorkDisplay = () => {
+  const workVariant = {
+    visible: { opacity: 1, transition: { duration: 0.8, ease: 'easeIn' }, y: 0 },
+    hidden: { opacity: 0, y: '20px' },
+  }
+
+  const control = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.2 });
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView])
+
   return (
-    <div className="all-work-container">
+    <motion.div
+      ref={ref}
+      variants={workVariant}
+      initial="hidden"
+      animate={control}
+      className="all-work-container"
+    >
       <h2>Some Of Our Services</h2>
       <div className="services-container">
         <Work title="Interior Finishing" image={interior}>
@@ -41,7 +64,7 @@ const WorkDisplay = () => {
           ensuring each project is a harmonious fusion of aesthetics and structural integrity.
         </Work>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

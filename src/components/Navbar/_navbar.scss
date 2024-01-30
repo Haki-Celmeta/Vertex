@@ -38,4 +38,12 @@ nav {
   ul li a:hover {
     color: $orange-red-color;
   }
+
+  ul .nav-link {
+    color: black;
+  }
+
+  ul .active-link {
+    color: $orange-red-color;
+  }
 }

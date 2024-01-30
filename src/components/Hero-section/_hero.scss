@@ -6,6 +6,9 @@
   height: 90vh;
   @include displayFlexCenter(column);
   margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s;
 
   h1 {
     font-size: 5rem;
@@ -50,4 +53,9 @@
       transform: translateX(90px);
     }
   }
+}
+
+.hero-section.active {
+  opacity: 1;
+  transform: translateY(0);
 }

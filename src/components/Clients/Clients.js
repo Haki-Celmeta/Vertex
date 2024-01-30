@@ -1,10 +1,33 @@
 import React from "react";
 import Client from "./Client";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 import './_clients.scss';
 
 const Clients = () => {
+  const clientsVariant = {
+    visible: { opacity: 1, transition: { duration: 0.8, ease: "easeIn" }, y: 0 },
+    hidden: { opacity: 0, y: "20px" }
+  }
+
+  const control = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.4 });
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
+
   return (
-    <div className="clients-container">
+    <motion.div
+      ref={ref}
+      variants={clientsVariant}
+      initial="hidden"
+      animate={control}
+      className="clients-container"
+    >
       <h2>Comments</h2>
       <div className="clients-testimonals">
         <Client author="John Doe, Homeowner">
@@ -30,7 +53,7 @@ const Clients = () => {
           Vertex Construction truly delivers excellence in every aspect."
         </Client>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

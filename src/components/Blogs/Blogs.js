@@ -4,11 +4,34 @@ import interior1 from "../../assets/images/interior-blog-1.jpg";
 import interior2 from "../../assets/images/interior-blog-2.png";
 import interior3 from "../../assets/images/interior-blog-3.jpg";
 import interior4 from "../../assets/images/interior-blog-4.jpg";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 import "./_blogs.scss"
 
 const Blogs = () => {
+  const blogsVariant = {
+    visible: { opacity: 1, transition: { duration: 0.8, ease: "easeIn" }, y: 0 },
+    hidden: { opacity: 0, y: "20px" }
+  }
+
+  const control = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.3 });
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
+
   return (
-    <div className="blogs">
+    <motion.div
+      ref={ref}
+      variants={blogsVariant}
+      initial="hidden"
+      animate={control}
+      className="blogs"
+    >
       <h2>Blogs & News</h2>
       <div className="blogs-container">
         <Blog image={interior1} title="Trending Interior Home Design for 2024" date="January 2, 2024" url="https://www.homesandgardens.com/interior-design/interior-design-trends">
@@ -24,7 +47,7 @@ const Blogs = () => {
           nisi scelerisque eu ultrices...
         </Blog>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
