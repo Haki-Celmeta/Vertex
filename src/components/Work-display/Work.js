@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Work = ({ title, children, image }) => {
   return (
@@ -10,7 +11,7 @@ const Work = ({ title, children, image }) => {
         <p>
           {children}
         </p>
-        <a href="/">READ MORE</a>
+        <Link to="services">READ MORE</Link>
       </div>
       <img src={image} alt={title} />
     </div>

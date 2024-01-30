@@ -7,6 +7,8 @@ import Partnerships from "../components/Partnership/Partnerships";
 import Clients from "../components/Clients/Clients";
 import About from "../components/About-us/About-us";
 import Advantages from "../components/Advantages/Advantages";
+import Blogs from "../components/Blogs/Blogs";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -19,6 +21,8 @@ const Home = () => {
       <Statistics />
       <Clients />
       <Partnerships />
+      <Blogs />
+      <Footer />
     </>
   )
 }

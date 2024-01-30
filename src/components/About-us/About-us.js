@@ -1,5 +1,6 @@
 import React from "react";
 import interior from "../../assets/images/about-us-interior-design.jpg";
+import { Link } from "react-router-dom";
 import './_about-us.scss';
 
 const About = () => {
@@ -13,7 +14,7 @@ const About = () => {
             Whether it's architectural design, meticulous planning, or on-site execution, we are committed to
             exceeding expectations...
           </p>
-          <a href="#">READ MORE</a>
+          <Link to="about">READ MORE</Link>
         </div>
         <img src={interior} alt="about-us-interior-design" />
       </div>

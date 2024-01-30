@@ -1,0 +1,63 @@
+@import '../../assets/styles/mixin';
+@import '../../assets/styles/variables';
+
+.web-foot {
+  @include displayFlex(column);
+  background-color: black;
+  color: rgb(192, 192, 192);
+  font-size: 1.1rem;
+  padding: 8rem 4rem;
+}
+
+.first-part {
+  @include displayFlex(row);
+  justify-content: space-evenly;
+  text-transform: uppercase;
+  padding-bottom: 6rem;
+
+  img {
+    height: 60px;
+    width: 50px;
+    margin-top: 1rem;
+  }
+
+  div {
+    @include displayFlex(column);
+    gap: 0.5rem;
+
+    h4, a {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    h4:hover, a:hover {
+      color: $dark-orange-color;
+    }
+  }
+}
+
+.second-part {
+  @include displayFlexCenter(column);
+  border-top: 1px solid grey;
+  padding-top: 6rem;
+  gap: 2rem;
+
+  .social-media-container {
+    @include displayFlex(row);
+    gap: 1.5rem;
+
+    img {
+      width: 60px;
+      height: 60px;
+      padding: 0.5rem;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    img:hover {
+      opacity: 0.6;
+    }
+  }
+}

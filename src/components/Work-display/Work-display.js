@@ -4,6 +4,7 @@ import concrete from "../../assets/images/concrete-work.jpg";
 import architecture from "../../assets/images/architecture-design.jpg";
 import Work from "./Work";
 import './_work-display.scss';
+import { Link } from "react-router-dom";
 
 const WorkDisplay = () => {
   return (
@@ -29,7 +30,7 @@ const WorkDisplay = () => {
               Our skilled teams excel in pouring foundations, constructing walls, floors, and other concrete structures,
               ensuring the structural integrity of your project.
             </p>
-            <a href="/">READ MORE</a>
+            <Link to="services">READ MORE</Link>
           </div>
         </div>
 

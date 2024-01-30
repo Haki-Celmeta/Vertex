@@ -24,12 +24,12 @@
 
   .about-us-information {
     @include displayFlex(column);
+    justify-content: center;
     gap: 4rem;
     background-color: #fff;
     padding: 2rem;
     border-radius: 16px;
-    box-shadow: 6px 6px 15px -3px $orange-red-color;
-    align-items: center;
+    box-shadow: 6px 6px 15px -3px #ff440033;
 
     p {
       font-size: 1.75rem;
@@ -50,6 +50,6 @@
   img {
     width: 800px;
     border-radius: 16px;
-    box-shadow: 6px 6px 15px -3px $orange-red-color;
+    box-shadow: 6px 6px 15px -3px #ff440033;
   }
 }
